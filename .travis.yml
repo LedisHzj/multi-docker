@@ -3,10 +3,10 @@ services:
   - docker
 
 before_install:
-  - docker build -t LedisHzj/react_test -f ./client/Dockerfile.dev ./client
+  - docker build -t ledishzj/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run LedisHzj/react_test npm test -- --coverage
+  - docker run ledishzj/react-test npm test -- --coverage
 
 after_success:
   - docker build -t LedisHzj/multi_client ./client
