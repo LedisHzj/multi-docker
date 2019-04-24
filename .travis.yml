@@ -2,11 +2,11 @@ sudo: required
 services:
   - docker
 
-# before_install:
-#   - docker build -t LedisHzj/react-test -f ./client/Dockerfile.dev ./client
+before_install:
+  - docker build LedisHzj/react-test -f ./client/Dockerfile.dev ./client
 
-# script:
-#   - docker run LedisHzj/react-test npm test -- --coverage
+script:
+  - docker run LedisHzj/react-test npm test -- --coverage
 
 after_success:
   - docker build -t LedisHzj/multi-client ./client
