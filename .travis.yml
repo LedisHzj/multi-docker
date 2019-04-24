@@ -9,14 +9,14 @@ script:
   - docker run ledishzj/react-test npm test -- --coverage
 
 after_success:
-  - docker build -t LedisHzj/multi_client ./client
-  - docker build -t LedisHzj/multi_nginx ./nginx
-  - docker build -t LedisHzj/multi_server ./server
-  - docker build -t LedisHzj/multi_worker ./worker
+  - docker build -t ledishzj/multi_client ./client
+  - docker build -t ledishzj/multi_nginx ./nginx
+  - docker build -t ledishzj/multi_server ./server
+  - docker build -t ledishzj/multi_worker ./worker
   # log in to docker cli
   - echo "$DOCKER_PASSWORD" docker login -u "DOCKER_ID" --password=stdin
   # take those images end push them to docker hub
-  - docker push LedisHzj/multi_client
-  - docker push LedisHzj/multi_nginx
-  - docker push LedisHzj/multi_server
-  - docker push LedisHzj/multi_worker
+  - docker push ledishzj/multi_client
+  - docker push ledishzj/multi_nginx
+  - docker push ledishzj/multi_server
+  - docker push ledishzj/multi_worker
